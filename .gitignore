@@ -36,6 +36,9 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
+# Add initial output
+initial_output.html
+
 # Unit test / coverage reports
 htmlcov/
 .tox/

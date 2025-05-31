@@ -1,0 +1,61 @@
+TENDER DATA VALIDATION REPORT
+Generated: 2025-05-31 23:11:12
+============================================================
+📊 DATA QUALITY VALIDATION REPORT
+============================================================
+🕒 Report generated: 2025-05-31 23:11:12
+📁 File: ../output/tender_opportunities.json
+📊 Total tenders: 100
+
+📋 METADATA:
+   Last updated: 2025-05-31T22:49:06.686768
+   Pages scraped: Unknown
+   Source: https://www.find-tender.service.gov.uk/Search/Results
+
+✅ DATA COMPLETENESS:
+   📝 Titles: 100/100 (100.0%)
+   🔗 Links: 100/100 (100.0%)
+   🏛️  Organizations: 100/100 (100.0%)
+   📄 Descriptions: 0/100 (0.0%)
+   🆔 Tender IDs: 100/100 (100.0%)
+   📋 Details: 100/100 (100.0%)
+
+🔄 DUPLICATE CHECK:
+   Duplicates found: 0
+
+🔗 LINK VALIDATION:
+   Valid link format: 100/100 (100.0%)
+
+🏛️  ORGANIZATION ANALYSIS:
+   Unique organizations: 76
+   Top organizations:
+      Guy's and St Thomas' NHS Foundation Trust: 8 tenders
+      SUPPLY CHAIN COORDINATION LIMITED: 4 tenders
+      Sport England: 4 tenders
+      Lincolnshire County Council: 3 tenders
+      Transport for Wales: 2 tenders
+
+📊 QUALITY SCORE:
+   ✅ Completeness: 100.0%
+   ✅ Link Validity: 100.0%
+   ✅ Organization Rate: 100.0%
+   ✅ Duplicate Penalty: 100.0%
+
+🎯 OVERALL QUALITY: 100.0%
+   ✅ Excellent - Data quality is very high
+
+🌐 WEBSITE COMPARISON:
+------------------------------
+❌ Error during website comparison: invalid literal for int() with base 10: '176,287'
+
+🔗 LINK FUNCTIONALITY TEST:
+------------------------------
+🔗 Testing link 1: Project Management Resources...
+   ✅ Working (Status: 200)
+🔗 Testing link 2: ID 5978081 - DfE - Provision of Video and Animatio...
+   ✅ Working (Status: 200)
+🔗 Testing link 3: Together Housing Association Ltd - Asbestos Remova...
+   ✅ Working (Status: 200)
+
+📊 Link test results: 3/3 working (100.0%)
+✅ All tested links are working!
