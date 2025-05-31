@@ -1,19 +1,19 @@
 # 🏛️ UK Government Tender Opportunities Scraper
 
-A comprehensive Python web scraper for extracting tender opportunities from the UK Government's Find a Tender service (https://www.find-tender.service.gov.uk). This tool automatically scrapes, validates, and organizes tender data with built-in quality assurance and real-time progress tracking.
+A comprehensive Python web scraper for extracting tender opportunities from the UK Government's Find a Tender service (https://www.find-tender.service.gov.uk). This tool automatically scrapes, validates, and organises tender data with built-in quality assurance and real-time progress tracking.
 
 ## 📋 What This Does
 
 This scraper automates the extraction of government tender opportunities, providing:
 
-- **🔍 Complete Tender Data**: Extracts titles, organizations, descriptions, contract values, deadlines, notice types, and more
+- **🔍 Complete Tender Data**: Extracts titles, organisations, descriptions, contract values, deadlines, notice types, and more
 - **📊 Real-time Progress**: Updates JSON output after each page with live progress tracking
 - **🔄 Pagination Support**: Automatically navigates through multiple pages of results
 - **🎯 Duplicate Prevention**: Intelligent filtering to avoid duplicate tender entries
-- **📁 Organized Output**: Structured JSON format with metadata and automatic backups
+- **📁 Organised Output**: Structured JSON format with metadata and automatic backups
 - **✅ Data Validation**: Comprehensive quality checks and validation reporting
 - **🔗 Link Verification**: Tests scraped tender links to ensure they're working
-- **📈 Statistical Analysis**: Organization analysis, coverage reports, and quality scoring
+- **📈 Statistical Analysis**: Organisation analysis, coverage reports, and quality scoring
 
 ## 🚀 Key Features
 
@@ -22,7 +22,7 @@ This scraper automates the extraction of government tender opportunities, provid
 - **Multi-page scraping** with configurable page limits
 - **Comprehensive tender details** including:
   - Tender titles and descriptions
-  - Publishing organizations
+  - Publishing organisations
   - Contract values and locations
   - Notice types and publication dates
   - Tender IDs and direct links
@@ -42,7 +42,7 @@ This scraper automates the extraction of government tender opportunities, provid
 - **Structured JSON output** with metadata
 - **Automatic backup creation** with timestamps
 - **Real-time progress updates** after each page
-- **Organized file structure** with separate output and validation folders
+- **Organised file structure** with separate output and validation folders
 
 ## 📁 Project Structure
 
@@ -150,7 +150,7 @@ json_filename = "output/tender_opportunities.json"  # Modify as needed
     {
       "title": "Digital Office Transformation Solutions",
       "link": "https://www.find-tender.service.gov.uk/Notice/028954-2025?origin=SearchResults&p=1",
-      "organization": "Guy's and St Thomas' NHS Foundation Trust",
+      "organisation": "Guy's and St Thomas' NHS Foundation Trust",
       "description": "Comprehensive digital transformation...",
       "details": {
         "Notice type": "UK1: Pipeline notice",
@@ -171,7 +171,7 @@ json_filename = "output/tender_opportunities.json"  # Modify as needed
 | ---------------- | ------------------------------------ | --------------------------------------------------- |
 | `title`        | Official tender title                | "Digital Office Transformation Solutions"           |
 | `link`         | Direct URL to tender page            | "https://www.find-tender.service.gov.uk/Notice/..." |
-| `organization` | Publishing organization              | "Guy's and St Thomas' NHS Foundation Trust"         |
+| `organisation` | Publishing organisation              | "Guy's and St Thomas' NHS Foundation Trust"         |
 | `description`  | Tender description (truncated)       | "Comprehensive digital transformation..."           |
 | `details`      | Key-value pairs of tender specifics  | Notice type, values, dates, locations               |
 | `tender_id`    | Unique identifier extracted from URL | "028954-2025"                                       |
@@ -183,7 +183,7 @@ json_filename = "output/tender_opportunities.json"  # Modify as needed
 
 - **📝 Data Completeness**: Percentage of complete fields per tender
 - **🔗 Link Validity**: Verification of URL formats and functionality
-- **🏛️ Organization Coverage**: Analysis of publishing organizations
+- **🏛️ Organisation Coverage**: Analysis of publishing organisations
 - **🔄 Duplicate Detection**: Identification of repeated entries
 - **📊 Overall Quality Score**: Composite score (0-100%)
 
@@ -196,7 +196,7 @@ json_filename = "output/tender_opportunities.json"  # Modify as needed
 ✅ DATA COMPLETENESS:
    📝 Titles: 100/100 (100.0%)
    🔗 Links: 100/100 (100.0%)
-   🏛️ Organizations: 100/100 (100.0%)
+   🏛️ Organisations: 100/100 (100.0%)
    🆔 Tender IDs: 100/100 (100.0%)
 
 🎯 OVERALL QUALITY: 100.0%
@@ -211,7 +211,7 @@ json_filename = "output/tender_opportunities.json"  # Modify as needed
 - **CSS Selectors**: Targets specific HTML elements:
   - `div.search-result` - Individual tender containers
   - `div.search-result-header h2 a` - Tender titles and links
-  - `div.search-result-sub-header` - Organization names
+  - `div.search-result-sub-header` - Organisation names
   - `div.search-result-entry` - Key-value detail pairs
 
 ### Rate Limiting & Ethics
@@ -267,10 +267,10 @@ json_filename = "output/tender_opportunities.json"  # Modify as needed
 ### Planned Features
 
 - [ ] **Database Integration** - PostgreSQL/MongoDB support
-- [ ] **Advanced Filtering** - Search by value ranges, organizations, dates
+- [ ] **Advanced Filtering** - Search by value ranges, organisations, dates
 - [ ] **Email Notifications** - Alerts for new high-value tenders
 - [ ] **API Endpoint** - RESTful API for data access
-- [ ] **Dashboard Interface** - Web-based data visualization
+- [ ] **Dashboard Interface** - Web-based data visualisation
 - [ ] **Automated Scheduling** - Cron job integration for regular updates
 
 ### Technical Improvements
@@ -319,12 +319,12 @@ For questions, issues, or suggestions regarding this scraper:
 **Terms of Service Compliance:**
 - This tool operates under the UK Government's Open Government Licence (OGL)
 - Implements respectful crawling practices to avoid system impairment
-- Uses 2-second delays between requests to minimize server load
+- Uses 2-second delays between requests to minimise server load
 - For transparency and public interest in government procurement data
 
 **OGL Compliance:**
 - Crown copyright content is used under Open Government Licence v3.0
-- Source attribution: "Contains public sector information licensed under the Open Government Licence v3.0"
+- Source attribution: "Contains public sector information licenced under the Open Government Licence v3.0"
 - Full licence terms: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 
 **Responsible Use:**

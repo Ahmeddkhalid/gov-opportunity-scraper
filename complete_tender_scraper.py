@@ -24,9 +24,9 @@ def extract_tender_titles_and_links(soup):
                     title = link_tag.get_text().strip()
                     href = link_tag.get('href')
                     
-                    # Get organization name
+                    # Get organisation name
                     org_div = result.find('div', class_='search-result-sub-header')
-                    organization = org_div.get_text().strip() if org_div else "N/A"
+                    organisation = org_div.get_text().strip() if org_div else "N/A"
                     
                     # Get additional details
                     description_div = result.find('div', class_='wrap-text')
@@ -51,7 +51,7 @@ def extract_tender_titles_and_links(soup):
                     tender_data = {
                         'title': title,
                         'link': href,
-                        'organization': organization,
+                        'organisation': organisation,
                         'description': description,
                         'details': details,
                         'scraped_at': datetime.now().isoformat(),
@@ -257,7 +257,7 @@ def scrape_find_tender_complete():
             
             for i, tender in enumerate(page_tenders, 1):
                 print(f"\n🏢 {len(all_tenders) - len(page_tenders) + i}. {tender['title']}")
-                print(f"   🏛️  Organization: {tender['organization']}")
+                print(f"   🏛️  Organisation: {tender['organisation']}")
                 print(f"   🔗 Link: {tender['link']}")
                 print(f"   🆔 ID: {tender['tender_id']}")
                 
@@ -319,7 +319,7 @@ def scrape_find_tender_complete():
         print("-" * 60)
         for i, tender in enumerate(all_tenders[:5], 1):  # Show first 5
             print(f"{i}. {tender['title']}")
-            print(f"   Organization: {tender['organization']}")
+            print(f"   Organisation: {tender['organisation']}")
             print(f"   Link: {tender['link']}")
             print()
     

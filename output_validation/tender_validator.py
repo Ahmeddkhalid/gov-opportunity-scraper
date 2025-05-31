@@ -44,14 +44,14 @@ def validate_scraped_data(json_file="../output/tender_opportunities.json"):
     
     has_title = sum(1 for t in tenders if t.get('title') and len(t.get('title', '').strip()) > 0)
     has_link = sum(1 for t in tenders if t.get('link') and len(t.get('link', '').strip()) > 0)
-    has_org = sum(1 for t in tenders if t.get('organization') and t.get('organization') != "N/A")
+    has_org = sum(1 for t in tenders if t.get('organisation') and t.get('organisation') != "N/A")
     has_description = sum(1 for t in tenders if t.get('description') and len(t.get('description', '').strip()) > 0)
     has_tender_id = sum(1 for t in tenders if t.get('tender_id'))
     has_details = sum(1 for t in tenders if t.get('details') and len(t.get('details', {})) > 0)
     
     print(f"   📝 Titles: {has_title}/{total} ({has_title/total*100:.1f}%)")
     print(f"   🔗 Links: {has_link}/{total} ({has_link/total*100:.1f}%)")
-    print(f"   🏛️  Organizations: {has_org}/{total} ({has_org/total*100:.1f}%)")
+    print(f"   🏛️  Organisations: {has_org}/{total} ({has_org/total*100:.1f}%)")
     print(f"   📄 Descriptions: {has_description}/{total} ({has_description/total*100:.1f}%)")
     print(f"   🆔 Tender IDs: {has_tender_id}/{total} ({has_tender_id/total*100:.1f}%)")
     print(f"   📋 Details: {has_details}/{total} ({has_details/total*100:.1f}%)")
@@ -85,19 +85,19 @@ def validate_scraped_data(json_file="../output/tender_opportunities.json"):
         for example in invalid_examples:
             print(f"      Example: {example}")
     
-    # Organization analysis
-    print(f"\n🏛️  ORGANIZATION ANALYSIS:")
-    organizations = [t.get('organization', '') for t in tenders if t.get('organization') and t.get('organization') != "N/A"]
-    unique_orgs = set(organizations)
-    print(f"   Unique organizations: {len(unique_orgs)}")
+    # Organisation analysis
+    print(f"\n🏛️  ORGANISATION ANALYSIS:")
+    organisations = [t.get('organisation', '') for t in tenders if t.get('organisation') and t.get('organisation') != "N/A"]
+    unique_orgs = set(organisations)
+    print(f"   Unique organisations: {len(unique_orgs)}")
     
-    # Most common organizations
+    # Most common organisations
     org_counts = {}
-    for org in organizations:
+    for org in organisations:
         org_counts[org] = org_counts.get(org, 0) + 1
     
     top_orgs = sorted(org_counts.items(), key=lambda x: x[1], reverse=True)[:5]
-    print(f"   Top organizations:")
+    print(f"   Top organisations:")
     for org, count in top_orgs:
         print(f"      {org}: {count} tenders")
     
@@ -107,7 +107,7 @@ def validate_scraped_data(json_file="../output/tender_opportunities.json"):
     scores = {
         'completeness': (has_title + has_link + has_tender_id) / (3 * total) * 100,
         'link_validity': (valid_links / total) * 100,
-        'organization_rate': (has_org / total) * 100,
+        'organisation_rate': (has_org / total) * 100,
         'duplicate_penalty': max(0, 100 - (duplicates / total) * 100)
     }
     
@@ -130,7 +130,7 @@ def validate_scraped_data(json_file="../output/tender_opportunities.json"):
         'total_tenders': total,
         'completeness_rate': has_title/total,
         'valid_links_rate': valid_links/total,
-        'organization_rate': has_org/total,
+        'organisation_rate': has_org/total,
         'duplicates': duplicates,
         'overall_score': overall_score,
         'quality_status': 'excellent' if overall_score >= 90 else 'good' if overall_score >= 70 else 'poor'
@@ -167,7 +167,7 @@ def generate_validation_sample(json_file="../output/tender_opportunities.json", 
     for i, tender in enumerate(sample, 1):
         print(f"📋 SAMPLE {i}:")
         print(f"   Title: {tender.get('title', 'N/A')}")
-        print(f"   Organization: {tender.get('organization', 'N/A')}")
+        print(f"   Organisation: {tender.get('organisation', 'N/A')}")
         print(f"   ID: {tender.get('tender_id', 'N/A')}")
         print(f"   🔗 Verify at: {tender.get('link', 'N/A')}")
         
@@ -182,7 +182,7 @@ def generate_validation_sample(json_file="../output/tender_opportunities.json", 
     print("\n✅ MANUAL VERIFICATION CHECKLIST:")
     print("   1. Click each link - does it work and go to the correct tender?")
     print("   2. Does the title on the website match our extracted title?")
-    print("   3. Does the organization name match?")
+    print("   3. Does the organisation name match?")
     print("   4. Are the key details (notice type, dates, values) accurate?")
     print("   5. Is the tender ID correct (last part of the URL)?")
     
