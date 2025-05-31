@@ -317,17 +317,20 @@ For questions, issues, or suggestions regarding this scraper:
 ## 📋 Compliance & Legal Notes
 
 **Terms of Service Compliance:**
+
 - This tool operates under the UK Government's Open Government Licence (OGL)
 - Implements respectful crawling practices to avoid system impairment
 - Uses 2-second delays between requests to minimise server load
 - For transparency and public interest in government procurement data
 
 **OGL Compliance:**
+
 - Crown copyright content is used under Open Government Licence v3.0
 - Source attribution: "Contains public sector information licenced under the Open Government Licence v3.0"
 - Full licence terms: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 
 **Responsible Use:**
+
 - Does not impair or disrupt the Find a Tender system
 - Maintains respectful request patterns
 - Intended for research, transparency, and public interest purposes
