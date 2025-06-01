@@ -5,7 +5,7 @@ import random
 from datetime import datetime
 import os
 
-def validate_scraped_data(json_file="../output/tender_opportunities.json"):
+def validate_scraped_data(json_file="output/tender_opportunities.json"):
     """Comprehensive validation of scraped data quality"""
     
     if not os.path.exists(json_file):
@@ -136,7 +136,7 @@ def validate_scraped_data(json_file="../output/tender_opportunities.json"):
         'quality_status': 'excellent' if overall_score >= 90 else 'good' if overall_score >= 70 else 'poor'
     }
 
-def generate_validation_sample(json_file="../output/tender_opportunities.json", sample_size=5):
+def generate_validation_sample(json_file="output/tender_opportunities.json", sample_size=5):
     """Generate random sample for manual verification"""
     
     if not os.path.exists(json_file):
@@ -188,7 +188,7 @@ def generate_validation_sample(json_file="../output/tender_opportunities.json", 
     
     return sample
 
-def quick_website_comparison(json_file="../output/tender_opportunities.json"):
+def quick_website_comparison(json_file="output/tender_opportunities.json"):
     """Compare our scraped count with website's current total"""
     
     print(f"\n🌐 WEBSITE COMPARISON:")
@@ -204,8 +204,10 @@ def quick_website_comparison(json_file="../output/tender_opportunities.json"):
             results_count = soup.find('span', class_='search-result-count')
             
             if results_count:
-                website_total = int(results_count.get_text().strip())
-                print(f"🌐 Website currently shows: {website_total} notices")
+                website_total_text = results_count.get_text().strip()
+                # Remove commas and convert to int
+                website_total = int(website_total_text.replace(',', ''))
+                print(f"🌐 Website currently shows: {website_total:,} notices")
             else:
                 print("⚠️  Could not extract current website total")
                 return None
@@ -225,11 +227,7 @@ def quick_website_comparison(json_file="../output/tender_opportunities.json"):
             if our_total < website_total:
                 coverage = (our_total / website_total) * 100
                 print(f"📊 Coverage: {coverage:.1f}%")
-                
-                if pages_scraped < 10:  # Assuming limited scraping
-                    print("   ℹ️  Lower coverage expected due to page limit")
-                else:
-                    print("   ⚠️  Lower coverage - check for scraping issues")
+
             elif our_total == website_total:
                 print("✅ Perfect match - Full coverage achieved!")
             else:
@@ -248,7 +246,7 @@ def quick_website_comparison(json_file="../output/tender_opportunities.json"):
         print(f"❌ Error during website comparison: {e}")
         return None
 
-def test_random_links(json_file="../output/tender_opportunities.json", num_tests=3):
+def test_random_links(json_file="output/tender_opportunities.json", num_tests=3):
     """Test random links to ensure they're working"""
     
     print(f"\n🔗 LINK FUNCTIONALITY TEST:")
@@ -305,7 +303,7 @@ def test_random_links(json_file="../output/tender_opportunities.json", num_tests
         'success_rate': success_rate
     }
 
-def save_validation_report(json_file="../output/tender_opportunities.json", report_file="validation_report/validation_report.txt"):
+def save_validation_report(json_file="output/tender_opportunities.json", report_file="validation_report/validation_report.txt"):
     """Save comprehensive validation report to file"""
     
     import sys
@@ -342,11 +340,13 @@ def save_validation_report(json_file="../output/tender_opportunities.json", repo
         print(f"❌ Error saving report: {e}")
         return False
 
-def full_validation(json_file="../output/tender_opportunities.json", sample_size=5):
+def full_validation(json_file="output/tender_opportunities.json", sample_size=5):
     """Run complete validation suite"""
     
     print("🚀 STARTING FULL VALIDATION SUITE")
     print("="*60)
+    print(f"📁 Validating file: {json_file}")
+    print()
     
     # 1. Data quality validation
     quality_results = validate_scraped_data(json_file)
@@ -361,7 +361,8 @@ def full_validation(json_file="../output/tender_opportunities.json", sample_size
     sample = generate_validation_sample(json_file, sample_size)
     
     # 5. Save report
-    save_validation_report(json_file)
+    report_file = f"validation_report/validation_report_{os.path.basename(json_file).replace('.json', '.txt')}"
+    save_validation_report(json_file, report_file)
     
     # Final summary
     print(f"\n🎯 VALIDATION SUMMARY:")
@@ -388,8 +389,19 @@ def full_validation(json_file="../output/tender_opportunities.json", sample_size
         print("   ❌ Review scraper logic for significant issues")
         print("   🔧 Check extraction patterns and selectors")
     
-    print("   📁 Check validation_report.txt for detailed results")
+    print(f"   📁 Check {report_file} for detailed results")
 
 if __name__ == "__main__":
-    # Run full validation if script is executed directly
-    full_validation() 
+    # Set target file - change this to validate different scraper outputs
+    target_file = "output/tender_opportunities_20250530.json"  # Date-specific file from updated scraper
+    
+    # Alternative files you might want to validate:
+    # target_file = "output/tender_opportunities.json"  # Original scraper output
+    # target_file = "output/tender_opportunities_20250531.json"  # Different date
+    
+    print(f"🎯 Target file: {target_file}")
+    print(f"📅 Change the target_file variable to validate different scraper outputs")
+    print()
+    
+    # Run full validation with the specified target file
+    full_validation(target_file) 

@@ -1,0 +1,64 @@
+TENDER DATA VALIDATION REPORT
+Generated: 2025-06-01 20:43:13
+============================================================
+📊 DATA QUALITY VALIDATION REPORT
+============================================================
+🕒 Report generated: 2025-06-01 20:43:13
+📁 File: output/tender_opportunities_20250530.json
+📊 Total tenders: 332
+
+📋 METADATA:
+   Last updated: 2025-06-01T20:36:40.141006
+   Pages scraped: Unknown
+   Source: https://www.find-tender.service.gov.uk/Search/Results
+
+✅ DATA COMPLETENESS:
+   📝 Titles: 332/332 (100.0%)
+   🔗 Links: 332/332 (100.0%)
+   🏛️  Organisations: 332/332 (100.0%)
+   📄 Descriptions: 0/332 (0.0%)
+   🆔 Tender IDs: 332/332 (100.0%)
+   📋 Details: 332/332 (100.0%)
+
+🔄 DUPLICATE CHECK:
+   Duplicates found: 0
+
+🔗 LINK VALIDATION:
+   Valid link format: 332/332 (100.0%)
+
+🏛️  ORGANISATION ANALYSIS:
+   Unique organisations: 223
+   Top organisations:
+      NHS South Yorkshire Integrated Care Board: 18 tenders
+      Guy's and St Thomas' NHS Foundation Trust: 8 tenders
+      SUPPLY CHAIN COORDINATION LIMITED: 6 tenders
+      Ministry of Defence: 6 tenders
+      Dumfries and Galloway Council: 6 tenders
+
+📊 QUALITY SCORE:
+   ✅ Completeness: 100.0%
+   ✅ Link Validity: 100.0%
+   ✅ Organisation Rate: 100.0%
+   ✅ Duplicate Penalty: 100.0%
+
+🎯 OVERALL QUALITY: 100.0%
+   ✅ Excellent - Data quality is very high
+
+🌐 WEBSITE COMPARISON:
+------------------------------
+🌐 Website currently shows: 176,287 notices
+💾 We scraped: 332 notices (0 pages)
+📊 Coverage: 0.2%
+   ℹ️  Lower coverage expected due to page limit
+
+🔗 LINK FUNCTIONALITY TEST:
+------------------------------
+🔗 Testing link 1: Asbestos Removal...
+   ✅ Working (Status: 200)
+🔗 Testing link 2: Supply and Installation of Vertical Transportation...
+   ✅ Working (Status: 200)
+🔗 Testing link 3: Stop Smoking - Primary Care Clinical Lead...
+   ✅ Working (Status: 200)
+
+📊 Link test results: 3/3 working (100.0%)
+✅ All tested links are working!
