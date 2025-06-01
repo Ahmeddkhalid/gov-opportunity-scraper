@@ -303,11 +303,24 @@ def test_random_links(json_file="output/tender_opportunities.json", num_tests=3)
         'success_rate': success_rate
     }
 
-def save_validation_report(json_file="output/tender_opportunities.json", report_file="validation_report/validation_report.txt"):
+def save_validation_report(json_file="output/tender_opportunities.json", report_file=None):
     """Save comprehensive validation report to file"""
     
     import sys
     from io import StringIO
+    
+    # Generate default report filename if not provided
+    if report_file is None:
+        # Extract the JSON filename and create corresponding report filename
+        json_basename = os.path.basename(json_file).replace('.json', '')
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        report_file = f"output_validation/validation_reports/validation_report_{json_basename}_{timestamp}.txt"
+    
+    # Ensure the validation_reports directory exists
+    report_dir = os.path.dirname(report_file)
+    if not os.path.exists(report_dir):
+        os.makedirs(report_dir, exist_ok=True)
+        print(f"📁 Created directory: {report_dir}")
     
     # Capture output
     old_stdout = sys.stdout
@@ -360,9 +373,8 @@ def full_validation(json_file="output/tender_opportunities.json", sample_size=5)
     # 4. Generate manual validation sample
     sample = generate_validation_sample(json_file, sample_size)
     
-    # 5. Save report
-    report_file = f"validation_report/validation_report_{os.path.basename(json_file).replace('.json', '.txt')}"
-    save_validation_report(json_file, report_file)
+    # 5. Save report - let save_validation_report handle the path
+    save_validation_report(json_file)
     
     # Final summary
     print(f"\n🎯 VALIDATION SUMMARY:")
@@ -389,6 +401,10 @@ def full_validation(json_file="output/tender_opportunities.json", sample_size=5)
         print("   ❌ Review scraper logic for significant issues")
         print("   🔧 Check extraction patterns and selectors")
     
+    # Generate the report filename for reference
+    json_basename = os.path.basename(json_file).replace('.json', '')
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    report_file = f"output_validation/validation_reports/validation_report_{json_basename}_{timestamp}.txt"
     print(f"   📁 Check {report_file} for detailed results")
 
 if __name__ == "__main__":

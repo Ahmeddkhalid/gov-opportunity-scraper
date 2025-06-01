@@ -179,6 +179,28 @@ json_filename = "output/tender_opportunities.json"  # Modify as needed
 
 ## 🎯 Validation Reports
 
+The `tender_validator.py` script provides comprehensive data quality validation for scraped tender data.
+
+### Running Validation
+
+```bash
+# Validate specific file
+python output_validation/tender_validator.py
+
+# Reports are automatically saved to:
+# output/validation_reports/validation_report_[filename]_[timestamp].txt
+```
+
+### Report Storage Structure
+
+```
+output/
+├── tender_opportunities_20250530.json         # Scraped data
+├── backups/                                   # Backup files
+└── validation_reports/                        # ← Validation reports stored here
+    └── validation_report_tender_opportunities_20250530_20250601_210841.txt
+```
+
 ### Quality Metrics
 
 - **📝 Data Completeness**: Percentage of complete fields per tender
@@ -192,15 +214,23 @@ json_filename = "output/tender_opportunities.json"  # Modify as needed
 ```
 📊 DATA QUALITY VALIDATION REPORT
 ============================================================
-📊 Total tenders: 100
+📊 Total tenders: 332
 ✅ DATA COMPLETENESS:
-   📝 Titles: 100/100 (100.0%)
-   🔗 Links: 100/100 (100.0%)
-   🏛️ Organisations: 100/100 (100.0%)
-   🆔 Tender IDs: 100/100 (100.0%)
+   📝 Titles: 332/332 (100.0%)
+   🔗 Links: 332/332 (100.0%)
+   🏛️ Organisations: 332/332 (100.0%)
+   🆔 Tender IDs: 332/332 (100.0%)
 
 🎯 OVERALL QUALITY: 100.0%
    ✅ Excellent - Data quality is very high
+
+🌐 WEBSITE COMPARISON:
+💾 We scraped: 332 notices
+📊 Coverage: 0.2% (from target date only)
+
+🔗 LINK FUNCTIONALITY TEST:
+📊 Link test results: 3/3 working (100.0%)
+✅ All tested links are working!
 ```
 
 ## 🔧 Technical Details

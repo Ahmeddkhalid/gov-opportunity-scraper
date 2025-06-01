@@ -1,14 +1,14 @@
 TENDER DATA VALIDATION REPORT
-Generated: 2025-06-01 20:43:13
+Generated: 2025-06-01 21:10:48
 ============================================================
 📊 DATA QUALITY VALIDATION REPORT
 ============================================================
-🕒 Report generated: 2025-06-01 20:43:13
+🕒 Report generated: 2025-06-01 21:10:48
 📁 File: output/tender_opportunities_20250530.json
 📊 Total tenders: 332
 
 📋 METADATA:
-   Last updated: 2025-06-01T20:36:40.141006
+   Last updated: 2025-06-01T21:05:08.781477
    Pages scraped: Unknown
    Source: https://www.find-tender.service.gov.uk/Search/Results
 
@@ -49,15 +49,14 @@ Generated: 2025-06-01 20:43:13
 🌐 Website currently shows: 176,287 notices
 💾 We scraped: 332 notices (0 pages)
 📊 Coverage: 0.2%
-   ℹ️  Lower coverage expected due to page limit
 
 🔗 LINK FUNCTIONALITY TEST:
 ------------------------------
-🔗 Testing link 1: Asbestos Removal...
+🔗 Testing link 1: Jontek Answerlink...
    ✅ Working (Status: 200)
-🔗 Testing link 2: Supply and Installation of Vertical Transportation...
+🔗 Testing link 2: UKRI-4770 2025 Annual Maintenance Service of EM Fa...
    ✅ Working (Status: 200)
-🔗 Testing link 3: Stop Smoking - Primary Care Clinical Lead...
+🔗 Testing link 3: National Staff Mental Health Support Service...
    ✅ Working (Status: 200)
 
 📊 Link test results: 3/3 working (100.0%)
