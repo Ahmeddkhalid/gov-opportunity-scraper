@@ -32,7 +32,7 @@ def validate_scraped_data(json_file="output/tender_opportunities.json"):
     if total == 0:
         print("❌ No tenders found in JSON file!")
         return None
-    
+
     # Metadata validation
     print(f"\n📋 METADATA:")
     print(f"   Last updated: {metadata.get('last_updated', 'Unknown')}")
@@ -409,7 +409,7 @@ def full_validation(json_file="output/tender_opportunities.json", sample_size=5)
 
 if __name__ == "__main__":
     # Set target file - change this to validate different scraper outputs
-    target_file = "output/tender_opportunities_20250530.json"  # Date-specific file from updated scraper
+    target_file = "output/tender_opportunities.json"  # Date-specific file from updated scraper
     
     # Alternative files you might want to validate:
     # target_file = "output/tender_opportunities.json"  # Original scraper output

@@ -1,0 +1,391 @@
+{
+  "metadata": {
+    "total_tenders": 20,
+    "last_updated": "2025-06-29T00:00:45.316821",
+    "source_url": "https://www.find-tender.service.gov.uk/Search/Results",
+    "scraper_version": "1.6"
+  },
+  "tenders": [
+    {
+      "title": "Upgrade of Automatic Ticket Gates with EMV Readers, associated software and integration services.",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035935-2025?origin=SearchResults&p=1",
+      "organisation": "NORTHERN TRAINS LIMITED",
+      "description": "",
+      "details": {
+        "Notice type": "UK6: Contract award notice",
+        "Contract value including VAT": "£1,910,982",
+        "Contract locations": "UKC - North East (England); UKD - North West (England); UKE - Yorkshire and the Humber; UKF - East Midlands (England)",
+        "Supplier": "CUBIC TRANSPORTATION SYSTEMS LIMITED",
+        "Publication date": "28 June 2025,  5:29pm"
+      },
+      "publication_date_text": "28 June 2025,  5:29pm",
+      "publication_date_parsed": "2025-06-28",
+      "scraped_at": "2025-06-29T00:00:29.369112",
+      "tender_id": "035935-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "Upgrade of Automatic Ticket Gates with EMV Readers, associated software and integration services.",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035934-2025?origin=SearchResults&p=1",
+      "organisation": "NORTHERN TRAINS LIMITED",
+      "description": "",
+      "details": {
+        "Notice type": "UK5: Transparency notice",
+        "Contract value including VAT": "£1,910,982",
+        "Contract locations": "UKC - North East (England); UKD - North West (England); UKE - Yorkshire and the Humber; UKF - East Midlands (England)",
+        "Supplier": "CUBIC TRANSPORTATION SYSTEMS LIMITED",
+        "Publication date": "28 June 2025,  5:06pm"
+      },
+      "publication_date_text": "28 June 2025,  5:06pm",
+      "publication_date_parsed": "2025-06-28",
+      "scraped_at": "2025-06-29T00:00:30.336967",
+      "tender_id": "035934-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "Upgrade of Automatic Ticket Gates with EMV Readers, associated software and integration services.",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035933-2025?origin=SearchResults&p=1",
+      "organisation": "NORTHERN TRAINS LIMITED",
+      "description": "",
+      "details": {
+        "Notice type": "F15: Voluntary ex ante transparency notice",
+        "Contract locations": "UKC - North East (England); UKD - North West (England); UKE - Yorkshire and the Humber; UKF - East Midlands (England)",
+        "Publication date": "28 June 2025,  4:49pm"
+      },
+      "publication_date_text": "28 June 2025,  4:49pm",
+      "publication_date_parsed": "2025-06-28",
+      "scraped_at": "2025-06-29T00:00:31.155224",
+      "tender_id": "035933-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "Upgrade of Payment Validators (Pvals), associated software and integration services.",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035932-2025?origin=SearchResults&p=1",
+      "organisation": "NORTHERN TRAINS LIMITED",
+      "description": "",
+      "details": {
+        "Notice type": "F15: Voluntary ex ante transparency notice",
+        "Contract locations": "UKC - North East (England); UKD - North West (England); UKE - Yorkshire and the Humber; UKF - East Midlands (England)",
+        "Publication date": "28 June 2025,  4:48pm"
+      },
+      "publication_date_text": "28 June 2025,  4:48pm",
+      "publication_date_parsed": "2025-06-28",
+      "scraped_at": "2025-06-29T00:00:31.894144",
+      "tender_id": "035932-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "Freedom to Speak Up Services (Interim Services)",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035931-2025?origin=SearchResults&p=1",
+      "organisation": "Mid and South Essex NHS Foundation Trust",
+      "description": "",
+      "details": {
+        "Notice type": "UK6: Contract award notice",
+        "Contract value including VAT": "£184,200",
+        "Contract location": "Location not specified",
+        "Supplier": "Guardian Service",
+        "Publication date": "28 June 2025, 12:51pm"
+      },
+      "publication_date_text": "28 June 2025, 12:51pm",
+      "publication_date_parsed": "2025-06-28",
+      "scraped_at": "2025-06-29T00:00:32.698156",
+      "tender_id": "035931-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "MENTAL HEALTH, HOMELESS AND SHORT STAY SUPPORTED HOUSING",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035930-2025?origin=SearchResults&p=1",
+      "organisation": "London Borough of Hounslow",
+      "description": "",
+      "details": {
+        "Notice type": "UK2: Preliminary market engagement notice",
+        "Engagement deadline": "2 July 2025",
+        "Contract location": "UKI - London",
+        "Submission deadline": "2 July 2025, 11:59pm",
+        "Publication date": "27 June 2025,  8:59pm"
+      },
+      "publication_date_text": "27 June 2025,  8:59pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:33.433583",
+      "tender_id": "035930-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "Alternative Provider Medical Services (APMS) Graham Road Surgery and Horizon Health Centre - Regulation 14 Urgent Contract Modification",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035929-2025?origin=SearchResults&p=1",
+      "organisation": "NHS BRISTOL, NORTH SOMERSET AND SOUTH GLOUCESTERSHIRE INTEGRATED CARE BOARD",
+      "description": "",
+      "details": {
+        "Notice type": "F15: Voluntary ex ante transparency notice",
+        "Total value excluding VAT": "£3,471,000",
+        "Contract value excluding VAT": "£3,471,000",
+        "Contract location": "UKK1 - Gloucestershire, Wiltshire and Bristol/Bath area",
+        "Supplier": "Pier Health Group Limited",
+        "Publication date": "27 June 2025,  6:29pm"
+      },
+      "publication_date_text": "27 June 2025,  6:29pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:34.184347",
+      "tender_id": "035929-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "CSOC 24x7 Monitoring",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035928-2025?origin=SearchResults&p=1",
+      "organisation": "NHS England",
+      "description": "",
+      "details": {
+        "Notice type": "F03: Contract award notice",
+        "Total value excluding VAT": "£7,080,000",
+        "Contract value excluding VAT": "£7,080,000",
+        "Contract location": "UK - United Kingdom",
+        "Supplier": "IBM UNITED KINGDOM LIMITED",
+        "Publication date": "27 June 2025,  5:47pm"
+      },
+      "publication_date_text": "27 June 2025,  5:47pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:35.040859",
+      "tender_id": "035928-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "Lyneham Technical Training Project-UK2",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035927-2025?origin=SearchResults&p=1",
+      "organisation": "Ministry of Defence",
+      "description": "",
+      "details": {
+        "Notice type": "UK2: Preliminary market engagement notice",
+        "Total value including VAT": "£120,000,000",
+        "Engagement deadline": "31 August 2025",
+        "Contract location": "UK - United Kingdom",
+        "Submission deadline": "31 August 2025, 11:59pm",
+        "Publication date": "27 June 2025,  5:38pm"
+      },
+      "publication_date_text": "27 June 2025,  5:38pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:35.784898",
+      "tender_id": "035927-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "Elizabeth line, Canary Wharf Bostwick Gates Replacement",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035926-2025?origin=SearchResults&p=1",
+      "organisation": "Transport for London",
+      "description": "",
+      "details": {
+        "Notice type": "UK4: Tender notice",
+        "Total value including VAT": "£900,000",
+        "Contract location": "UKI - London",
+        "Submission deadline": "12 August 2025, 11:59pm",
+        "Publication date": "27 June 2025,  5:30pm"
+      },
+      "publication_date_text": "27 June 2025,  5:30pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:36.576100",
+      "tender_id": "035926-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "Periodic Electrical Inspection & Testing to Domestic Properties",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035925-2025?origin=SearchResults&p=1",
+      "organisation": "Northern Ireland Housing Executive",
+      "description": "",
+      "details": {
+        "Notice type": "UK3: Planned procurement notice",
+        "Total value including VAT": "£31,160,040",
+        "Lot values including VAT": "£5,043,000; £3,954,360; £3,554,040; £3,329,880; £3,010,680; £3,078,000; £3,171,960; £1,932,840; £1,935,720; £2,149,560",
+        "Contract location": "UKN - Northern Ireland",
+        "Submission deadline": "16 September 2025,  3:00pm",
+        "Publication date": "27 June 2025,  5:29pm"
+      },
+      "publication_date_text": "27 June 2025,  5:29pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:37.992693",
+      "tender_id": "035925-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "Fusion concepts in future energy landscapes",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035924-2025?origin=SearchResults&p=1",
+      "organisation": "UK Atomic Energy Authority",
+      "description": "",
+      "details": {
+        "Notice type": "UK4: Tender notice",
+        "Total value including VAT": "£600,000",
+        "Contract location": "Location not specified",
+        "Submission deadline": "28 July 2025, 12:00pm",
+        "Publication date": "27 June 2025,  5:22pm"
+      },
+      "publication_date_text": "27 June 2025,  5:22pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:38.789248",
+      "tender_id": "035924-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "GSV2655 - HOC Chamber Repair & Reupholster of Benches",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035923-2025?origin=SearchResults&p=1",
+      "organisation": "Corporate Officer of the House of Commons",
+      "description": "",
+      "details": {
+        "Notice type": "UK4: Tender notice",
+        "Total value including VAT": "£720,000",
+        "Contract location": "UK - United Kingdom",
+        "Submission deadline": "8 August 2025, 12:00pm",
+        "Publication date": "27 June 2025,  5:15pm"
+      },
+      "publication_date_text": "27 June 2025,  5:15pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:39.606470",
+      "tender_id": "035923-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "BT274 - Accessibility Design Audits",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035922-2025?origin=SearchResults&p=1",
+      "organisation": "Westminster City Council",
+      "description": "",
+      "details": {
+        "Notice type": "UK7: Contract details notice",
+        "Contract value including VAT": "£80,880",
+        "Contract location": "Location not specified",
+        "Supplier": "Evans Jones Limited",
+        "Publication date": "27 June 2025,  5:14pm"
+      },
+      "publication_date_text": "27 June 2025,  5:14pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:40.412973",
+      "tender_id": "035922-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "IT Architecture Services for DFTO",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035921-2025?origin=SearchResults&p=1",
+      "organisation": "DFT OPERATOR LIMITED",
+      "description": "",
+      "details": {
+        "Notice type": "UK7: Contract details notice",
+        "Contract value including VAT": "£210,000",
+        "Contract locations": "UKC - North East (England); UKD - North West (England); UKE - Yorkshire and the Humber; UKF - East Midlands (England); UKG - West Midlands (England); UKH - East of England; UKI - London; UKJ - South East (England); UKK - South West (England)",
+        "Supplier": "PA Consulting Services Limited",
+        "Publication date": "27 June 2025,  5:12pm"
+      },
+      "publication_date_text": "27 June 2025,  5:12pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:41.274306",
+      "tender_id": "035921-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "Short Term Accommodation",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035920-2025?origin=SearchResults&p=1",
+      "organisation": "GREENSQUAREACCORD LIMITED",
+      "description": "",
+      "details": {
+        "Notice type": "UK6: Contract award notice",
+        "Contract value including VAT": "£150,000",
+        "Contract location": "UK - United Kingdom",
+        "Supplier": "INNTEL LIMITED",
+        "Publication date": "27 June 2025,  5:03pm"
+      },
+      "publication_date_text": "27 June 2025,  5:03pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:42.110428",
+      "tender_id": "035920-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "PEP/ASC/Reablement Bridging Service Recommissioning 2025/26",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035919-2025?origin=SearchResults&p=1",
+      "organisation": "Bristol City Council",
+      "description": "",
+      "details": {
+        "Notice type": "F03: Contract award notice",
+        "Total value excluding VAT": "£703,248",
+        "Contract values excluding VAT": "£401,856; £301,392",
+        "Contract location": "UKK - South West (England)",
+        "Suppliers": "Happy Care Ltd; Prime way Care Ltd",
+        "Publication date": "27 June 2025,  5:02pm"
+      },
+      "publication_date_text": "27 June 2025,  5:02pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:43.046353",
+      "tender_id": "035919-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "FEW1504 - PlayZone - Eyres Monsell",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035918-2025?origin=SearchResults&p=1",
+      "organisation": "Leicester City Council",
+      "description": "",
+      "details": {
+        "Notice type": "UK7: Contract details notice",
+        "Contract value including VAT": "£312,212.40",
+        "Contract location": "Location not specified",
+        "Supplier": "SUPPORT IN SPORT (UK) LIMITED",
+        "Publication date": "27 June 2025,  4:58pm"
+      },
+      "publication_date_text": "27 June 2025,  4:58pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:43.812420",
+      "tender_id": "035918-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "TENDER FOR ANNUAL INSPECTION OF OUTDOOR PLAY AREAS / MULTI USE GAMES AREAS (MUGAS) AND OUTDOOR GYMS",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035917-2025?origin=SearchResults&p=1",
+      "organisation": "Fermanagh and Omagh District Council",
+      "description": "",
+      "details": {
+        "Notice type": "UK4: Tender notice",
+        "Total value including VAT": "£75,000",
+        "Contract location": "Location not specified",
+        "Submission deadline": "4 August 2025, 12:00pm",
+        "Publication date": "27 June 2025,  4:56pm"
+      },
+      "publication_date_text": "27 June 2025,  4:56pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:44.528452",
+      "tender_id": "035917-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    },
+    {
+      "title": "GBR Design Support",
+      "link": "https://www.find-tender.service.gov.uk/Notice/035916-2025?origin=SearchResults&p=1",
+      "organisation": "DFT OPERATOR LIMITED",
+      "description": "",
+      "details": {
+        "Notice type": "UK7: Contract details notice",
+        "Contract value including VAT": "£103,680",
+        "Contract locations": "UKC - North East (England); UKD - North West (England); UKE - Yorkshire and the Humber; UKF - East Midlands (England); UKG - West Midlands (England); UKH - East of England; UKI - London; UKJ - South East (England); UKK - South West (England)",
+        "Supplier": "Riverview Consulting Limited",
+        "Publication date": "27 June 2025,  4:48pm"
+      },
+      "publication_date_text": "27 June 2025,  4:48pm",
+      "publication_date_parsed": "2025-06-27",
+      "scraped_at": "2025-06-29T00:00:45.316821",
+      "tender_id": "035916-2025",
+      "cpv_codes": [],
+      "cpv_categories": []
+    }
+  ]
+}

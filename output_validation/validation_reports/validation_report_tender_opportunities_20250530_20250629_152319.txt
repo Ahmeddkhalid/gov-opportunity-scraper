@@ -1,0 +1,13 @@
+TENDER DATA VALIDATION REPORT
+Generated: 2025-06-29 15:23:19
+============================================================
+❌ JSON file 'output/tender_opportunities_20250530.json' not found!
+
+🌐 WEBSITE COMPARISON:
+------------------------------
+🌐 Website currently shows: 182,548 notices
+❌ JSON file 'output/tender_opportunities_20250530.json' not found!
+
+🔗 LINK FUNCTIONALITY TEST:
+------------------------------
+❌ Error reading JSON file: [Errno 2] No such file or directory: 'output/tender_opportunities_20250530.json'

@@ -1,0 +1,63 @@
+TENDER DATA VALIDATION REPORT
+Generated: 2025-06-29 15:24:57
+============================================================
+📊 DATA QUALITY VALIDATION REPORT
+============================================================
+🕒 Report generated: 2025-06-29 15:24:57
+📁 File: output/tender_opportunities.json
+📊 Total tenders: 33697
+
+📋 METADATA:
+   Last updated: 2025-06-29T13:30:47.192926
+   Pages scraped: Unknown
+   Source: https://www.find-tender.service.gov.uk/Search/Results
+
+✅ DATA COMPLETENESS:
+   📝 Titles: 33697/33697 (100.0%)
+   🔗 Links: 33697/33697 (100.0%)
+   🏛️  Organisations: 33697/33697 (100.0%)
+   📄 Descriptions: 0/33697 (0.0%)
+   🆔 Tender IDs: 33697/33697 (100.0%)
+   📋 Details: 33697/33697 (100.0%)
+
+🔄 DUPLICATE CHECK:
+   Duplicates found: 0
+
+🔗 LINK VALIDATION:
+   Valid link format: 33697/33697 (100.0%)
+
+🏛️  ORGANISATION ANALYSIS:
+   Unique organisations: 3878
+   Top organisations:
+      Ministry of Defence: 480 tenders
+      Surrey County Council: 356 tenders
+      NHS England: 354 tenders
+      UK Research and Innovation: 333 tenders
+      Transport for London: 286 tenders
+
+📊 QUALITY SCORE:
+   ✅ Completeness: 100.0%
+   ✅ Link Validity: 100.0%
+   ✅ Organisation Rate: 100.0%
+   ✅ Duplicate Penalty: 100.0%
+
+🎯 OVERALL QUALITY: 100.0%
+   ✅ Excellent - Data quality is very high
+
+🌐 WEBSITE COMPARISON:
+------------------------------
+🌐 Website currently shows: 182,548 notices
+💾 We scraped: 33697 notices (0 pages)
+📊 Coverage: 18.5%
+
+🔗 LINK FUNCTIONALITY TEST:
+------------------------------
+🔗 Testing link 1: Tate Gallery - Signage and Wayfinding Consultancy ...
+   ✅ Working (Status: 200)
+🔗 Testing link 2: Hire of Portable Air Conditioning Units...
+   ✅ Working (Status: 200)
+🔗 Testing link 3: Complex and Transformation Management Consultancy ...
+   ✅ Working (Status: 200)
+
+📊 Link test results: 3/3 working (100.0%)
+✅ All tested links are working!
