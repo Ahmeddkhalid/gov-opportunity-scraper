@@ -1,19 +1,42 @@
 import streamlit as st
+
+# MUST be the first Streamlit command
+st.set_page_config(page_title="Tender Dashboard", layout="wide")
+
 import pandas as pd
 import json
 from datetime import datetime, timedelta
 
-# Try to import plotly, provide fallback if not available
+# Debug imports with detailed error messages
+st.write("🔍 **Debugging Package Imports:**")
+
+# Test Plotly import
 try:
     import plotly.express as px
     import plotly.graph_objects as go
     PLOTLY_AVAILABLE = True
-except ImportError:
+    st.success("✅ Plotly imported successfully")
+except ImportError as e:
     PLOTLY_AVAILABLE = False
-    st.warning("⚠️ Plotly not installed. Some visualizations will be limited. Install with: `pip install plotly`")
+    st.error(f"❌ Plotly import failed: {e}")
+except Exception as e:
+    PLOTLY_AVAILABLE = False
+    st.error(f"❌ Plotly unexpected error: {e}")
 
-# Set up Streamlit page
-st.set_page_config(page_title="Tender Dashboard", layout="wide")
+# Test streamlit-calendar import
+try:
+    from streamlit_calendar import calendar
+    CALENDAR_AVAILABLE = True
+    st.success("✅ streamlit-calendar imported successfully")
+except ImportError as e:
+    CALENDAR_AVAILABLE = False
+    st.error(f"❌ streamlit-calendar import failed: {e}")
+except Exception as e:
+    CALENDAR_AVAILABLE = False
+    st.error(f"❌ streamlit-calendar unexpected error: {e}")
+
+st.divider()
+
 st.title("📅 Tender Submission Dashboard")
 
 # Initialize session state for filters
@@ -105,7 +128,7 @@ def load_and_process_data():
                 
                 deadline_list.append(tender_data)
                 
-                # Create events for calendar - ENSURE ALL VALUES ARE JSON SERIALIZABLE
+                # Create events for calendar
                 events.append({
                     "title": str(tender.get("title", "Untitled")),
                     "start": deadline_dt.strftime('%Y-%m-%d'),
@@ -159,10 +182,10 @@ def create_timeline_chart(df):
     
     if not PLOTLY_AVAILABLE:
         # Fallback to simple bar chart
+        st.subheader("📊 Timeline Overview")
         daily_counts = df.groupby(df['deadline'].dt.date).size().reset_index()
         daily_counts.columns = ['date', 'count']
         chart_data = daily_counts.set_index('date')
-        st.subheader("📊 Timeline Overview")
         st.bar_chart(chart_data)
         return None
     
@@ -191,10 +214,7 @@ def create_timeline_chart(df):
 
 def create_map_visualization(df):
     """Create map visualization using Plotly"""
-    if df.empty:
-        return None
-    
-    if not PLOTLY_AVAILABLE:
+    if df.empty or not PLOTLY_AVAILABLE:
         return None
     
     map_data = df.dropna(subset=["latitude", "longitude"])
@@ -364,27 +384,7 @@ if not filtered_df.empty:
     location_counts = filtered_df.groupby("Contract location").size().reset_index(name="Tender Count")
     filtered_df = filtered_df.merge(location_counts, on="Contract location", how="left")
 
-# Layout: Callout Cards with better styling
-st.markdown("""
-<style>
-.metric-container {
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    padding: 1rem;
-    border-radius: 10px;
-    color: white;
-    text-align: center;
-    margin: 0.5rem 0;
-}
-.priority-legend {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
-    border-left: 4px solid #007bff;
-    margin: 1rem 0;
-}
-</style>
-""", unsafe_allow_html=True)
-
+# Layout: Callout Cards
 col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.metric("📌 Filtered Tenders", len(filtered_df))
@@ -420,59 +420,63 @@ with left:
     st.subheader("📅 Calendar View")
     
     if filtered_events:
-        try:
-            from streamlit_calendar import calendar
-            
-            initial_date = selected_date.strftime('%Y-%m-%d')
-            calendar_options = {
-                "initialView": "dayGridMonth",
-                "initialDate": initial_date,
-                "headerToolbar": {
-                    "left": "prev,next today",
-                    "center": "title",
-                    "right": "dayGridMonth,listWeek"
-                },
-                "eventClick": {"url": True},
-                "height": 400,
-                "eventDisplay": "block"
-            }
-            
-            st.info(f"📅 Showing {len(filtered_events)} tenders from {selected_date.strftime('%d %b %Y')} onwards")
-            
-            # Clean events data to ensure JSON serialization
-            clean_events = []
-            for event in filtered_events:
-                clean_event = {
-                    "title": str(event["title"]),
-                    "start": str(event["start"]),
-                    "end": str(event["end"]),
-                    "url": str(event["url"]),
-                    "backgroundColor": str(event.get("backgroundColor", "#3498db")),
-                    "borderColor": str(event.get("borderColor", "#2980b9"))
+        if CALENDAR_AVAILABLE:
+            try:
+                initial_date = selected_date.strftime('%Y-%m-%d')
+                calendar_options = {
+                    "initialView": "dayGridMonth",
+                    "initialDate": initial_date,
+                    "headerToolbar": {
+                        "left": "prev,next today",
+                        "center": "title",
+                        "right": "dayGridMonth,listWeek"
+                    },
+                    "eventClick": {"url": True},
+                    "height": 400,
+                    "eventDisplay": "block"
                 }
-                clean_events.append(clean_event)
-            
-            calendar(events=clean_events, options=calendar_options, key=f"calendar_{selected_date}_{selected_cpv}")
-            
-        except ImportError:
-            st.warning("📅 streamlit-calendar not installed. Install with: pip install streamlit-calendar")
-            
-            # Show events list as fallback
-            st.subheader("Upcoming Deadlines")
-            for i, event in enumerate(filtered_events[:10]):
-                event_date = pd.to_datetime(event['start']).strftime('%d %b %Y')
-                st.write(f"**{event_date}**: {event['title']}")
-                if i < len(filtered_events) - 1:
-                    st.write("---")
-                    
-        except Exception as e:
-            st.error(f"Calendar error: {e}")
-            # Show events list as fallback
-            st.subheader("Upcoming Deadlines")
-            for event in filtered_events[:10]:
-                event_date = pd.to_datetime(event['start']).strftime('%d %b %Y')
-                st.write(f"**{event_date}**: {event['title']}")
                 
+                st.info(f"📅 Showing {len(filtered_events)} tenders from {selected_date.strftime('%d %b %Y')} onwards")
+                
+                # Clean events data
+                clean_events = []
+                for event in filtered_events:
+                    clean_event = {
+                        "title": str(event["title"]),
+                        "start": str(event["start"]),
+                        "end": str(event["end"]),
+                        "url": str(event["url"]),
+                        "backgroundColor": str(event.get("backgroundColor", "#3498db")),
+                        "borderColor": str(event.get("borderColor", "#2980b9"))
+                    }
+                    clean_events.append(clean_event)
+                
+                calendar(events=clean_events, options=calendar_options, key=f"calendar_{selected_date}_{selected_cpv}")
+                
+            except Exception as e:
+                st.error(f"Calendar error: {e}")
+                # Show events list as fallback
+                st.subheader("Upcoming Deadlines")
+                for event in filtered_events[:10]:
+                    event_date = pd.to_datetime(event['start']).strftime('%d %b %Y')
+                    st.write(f"**{event_date}**: {event['title']}")
+        else:
+            # Show events list as fallback
+            st.subheader("Upcoming Deadlines")
+            for i, event in enumerate(filtered_events[:15]):
+                event_date = pd.to_datetime(event['start']).strftime('%d %b %Y')
+                days_until = (pd.to_datetime(event['start']) - pd.Timestamp.now()).days
+                
+                if days_until <= 3:
+                    priority = "🔴"
+                elif days_until <= 7:
+                    priority = "🟠"
+                elif days_until <= 14:
+                    priority = "🟡"
+                else:
+                    priority = "🟢"
+                
+                st.write(f"{priority} **{event_date}** ({days_until} days): {event['title']}")
     else:
         st.info("No events match the current filters.")
 
@@ -480,30 +484,31 @@ with right:
     st.subheader("🗺️ Tender Locations")
     
     if not filtered_df.empty:
-        try:
-            map_fig = create_map_visualization(filtered_df)
-            if map_fig and PLOTLY_AVAILABLE:
-                st.plotly_chart(map_fig, use_container_width=True)
-            else:
-                if not PLOTLY_AVAILABLE:
-                    st.warning("📊 Plotly not available. Showing location summary instead.")
-                else:
-                    st.warning("No geographic data available for filtered tenders.")
-                
-                # Show location summary as fallback
-                st.subheader("Locations Summary")
-                if "Contract location" in filtered_df.columns:
-                    location_summary = filtered_df.groupby("Contract location").size().sort_values(ascending=False)
-                    for location, count in location_summary.head(10).items():
-                        st.write(f"**{location}**: {count} tenders")
-        except Exception as e:
-            st.error(f"Map error: {e}")
+        map_fig = create_map_visualization(filtered_df)
+        if map_fig and PLOTLY_AVAILABLE:
+            st.plotly_chart(map_fig, use_container_width=True)
+        else:
             # Show location summary as fallback
             st.subheader("Locations Summary")
             if "Contract location" in filtered_df.columns:
                 location_summary = filtered_df.groupby("Contract location").size().sort_values(ascending=False)
-                for location, count in location_summary.head(10).items():
-                    st.write(f"**{location}**: {count} tenders")
+                
+                # Create a simple bar chart for locations
+                if PLOTLY_AVAILABLE:
+                    fig = px.bar(
+                        x=location_summary.head(10).values,
+                        y=location_summary.head(10).index,
+                        orientation='h',
+                        title="Top 10 Locations by Tender Count",
+                        labels={'x': 'Number of Tenders', 'y': 'Location'}
+                    )
+                    fig.update_layout(height=400)
+                    st.plotly_chart(fig, use_container_width=True)
+                else:
+                    # Simple text list
+                    for location, count in location_summary.head(10).items():
+                        percentage = (count / len(filtered_df)) * 100
+                        st.write(f"**{location}**: {count} tenders ({percentage:.1f}%)")
     else:
         st.info("No location data available for current filters.")
 
@@ -515,17 +520,9 @@ st.subheader("📋 Tender Details")
 if not filtered_df.empty:
     # Priority Legend
     st.markdown("""
-    <div class="priority-legend">
-        <h4>📊 Priority Legend</h4>
-        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px;">
-            <span>🔴 <strong>Critical:</strong> ≤3 days</span>
-            <span>🟠 <strong>Urgent:</strong> 4-7 days</span>
-            <span>🟡 <strong>Soon:</strong> 8-14 days</span>
-            <span>🟢 <strong>Normal:</strong> 15-30 days</span>
-            <span>🔵 <strong>Future:</strong> >30 days</span>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    **📊 Priority Legend:**
+    🔴 **Critical:** ≤3 days | 🟠 **Urgent:** 4-7 days | 🟡 **Soon:** 8-14 days | 🟢 **Normal:** 15-30 days | 🔵 **Future:** >30 days
+    """)
     
     try:
         styled_table = create_styled_table(filtered_df)
@@ -536,35 +533,13 @@ if not filtered_df.empty:
                 use_container_width=True,
                 height=400,
                 column_config={
-                    "Priority": st.column_config.TextColumn(
-                        "Priority",
-                        width="small",
-                    ),
-                    "Tender Title": st.column_config.TextColumn(
-                        "Tender Title",
-                        width="large",
-                    ),
-                    "Deadline": st.column_config.TextColumn(
-                        "Deadline",
-                        width="small",
-                    ),
-                    "Days Left": st.column_config.NumberColumn(
-                        "Days Left",
-                        width="small",
-                        format="%d days"
-                    ),
-                    "Organisation": st.column_config.TextColumn(
-                        "Organisation",
-                        width="medium",
-                    ),
-                    "Location": st.column_config.TextColumn(
-                        "Location",
-                        width="medium",
-                    ),
-                    "CPV Codes": st.column_config.TextColumn(
-                        "CPV Codes",
-                        width="large",
-                    )
+                    "Priority": st.column_config.TextColumn("Priority", width="small"),
+                    "Tender Title": st.column_config.TextColumn("Tender Title", width="large"),
+                    "Deadline": st.column_config.TextColumn("Deadline", width="small"),
+                    "Days Left": st.column_config.NumberColumn("Days Left", width="small", format="%d days"),
+                    "Organisation": st.column_config.TextColumn("Organisation", width="medium"),
+                    "Location": st.column_config.TextColumn("Location", width="medium"),
+                    "CPV Codes": st.column_config.TextColumn("CPV Codes", width="large")
                 }
             )
             
@@ -613,9 +588,15 @@ if not filtered_df.empty:
     except:
         st.sidebar.write("**Date Range:** Available in results")
 
-# Installation instructions
-if not PLOTLY_AVAILABLE:
-    st.sidebar.divider()
-    st.sidebar.error("📦 **Missing Dependencies**")
-    st.sidebar.write("Install for full functionality:")
-    st.sidebar.code("pip install plotly streamlit-calendar")
+# Debug information in sidebar
+st.sidebar.divider()
+st.sidebar.subheader("🔧 Debug Info")
+st.sidebar.write(f"**Plotly Available:** {'✅' if PLOTLY_AVAILABLE else '❌'}")
+st.sidebar.write(f"**Calendar Available:** {'✅' if CALENDAR_AVAILABLE else '❌'}")
+
+if not PLOTLY_AVAILABLE or not CALENDAR_AVAILABLE:
+    st.sidebar.error("📦 **Install Missing Packages:**")
+    if not PLOTLY_AVAILABLE:
+        st.sidebar.code("pip install plotly")
+    if not CALENDAR_AVAILABLE:
+        st.sidebar.code("pip install streamlit-calendar")
