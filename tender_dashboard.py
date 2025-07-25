@@ -2,8 +2,15 @@ import streamlit as st
 import pandas as pd
 import json
 from datetime import datetime, timedelta
-import plotly.express as px
-import plotly.graph_objects as go
+
+# Try to import plotly, provide fallback if not available
+try:
+    import plotly.express as px
+    import plotly.graph_objects as go
+    PLOTLY_AVAILABLE = True
+except ImportError:
+    PLOTLY_AVAILABLE = False
+    st.warning("⚠️ Plotly not installed. Some visualizations will be limited. Install with: `pip install plotly`")
 
 # Set up Streamlit page
 st.set_page_config(page_title="Tender Dashboard", layout="wide")
@@ -150,6 +157,15 @@ def create_timeline_chart(df):
     if df.empty:
         return None
     
+    if not PLOTLY_AVAILABLE:
+        # Fallback to simple bar chart
+        daily_counts = df.groupby(df['deadline'].dt.date).size().reset_index()
+        daily_counts.columns = ['date', 'count']
+        chart_data = daily_counts.set_index('date')
+        st.subheader("📊 Timeline Overview")
+        st.bar_chart(chart_data)
+        return None
+    
     # Group by date for better visualization
     daily_counts = df.groupby(df['deadline'].dt.date).size().reset_index()
     daily_counts.columns = ['date', 'count']
@@ -176,6 +192,9 @@ def create_timeline_chart(df):
 def create_map_visualization(df):
     """Create map visualization using Plotly"""
     if df.empty:
+        return None
+    
+    if not PLOTLY_AVAILABLE:
         return None
     
     map_data = df.dropna(subset=["latitude", "longitude"])
@@ -389,7 +408,7 @@ st.divider()
 # Timeline Chart
 if not filtered_df.empty:
     timeline_fig = create_timeline_chart(filtered_df)
-    if timeline_fig:
+    if timeline_fig and PLOTLY_AVAILABLE:
         st.plotly_chart(timeline_fig, use_container_width=True)
 
 st.divider()
@@ -463,10 +482,13 @@ with right:
     if not filtered_df.empty:
         try:
             map_fig = create_map_visualization(filtered_df)
-            if map_fig:
+            if map_fig and PLOTLY_AVAILABLE:
                 st.plotly_chart(map_fig, use_container_width=True)
             else:
-                st.warning("No geographic data available for filtered tenders.")
+                if not PLOTLY_AVAILABLE:
+                    st.warning("📊 Plotly not available. Showing location summary instead.")
+                else:
+                    st.warning("No geographic data available for filtered tenders.")
                 
                 # Show location summary as fallback
                 st.subheader("Locations Summary")
@@ -590,3 +612,10 @@ if not filtered_df.empty:
         st.sidebar.write(f"**Date Range:** {date_range}")
     except:
         st.sidebar.write("**Date Range:** Available in results")
+
+# Installation instructions
+if not PLOTLY_AVAILABLE:
+    st.sidebar.divider()
+    st.sidebar.error("📦 **Missing Dependencies**")
+    st.sidebar.write("Install for full functionality:")
+    st.sidebar.code("pip install plotly streamlit-calendar")
